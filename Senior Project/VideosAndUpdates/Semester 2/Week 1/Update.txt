@@ -1,0 +1,1 @@
+Page turning logic is now working. The button however, needs lots of work. 

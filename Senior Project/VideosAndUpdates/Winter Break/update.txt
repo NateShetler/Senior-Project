@@ -1,0 +1,5 @@
+This version has two scripts that can "communicate" by looking at one anothers variables. The two scripts are: forwardPageButton.cs and pageTurner.cs
+
+The variable used to communicate is called forwardPressed which functions as a boolean indicating that the forward button has been pressed.
+
+THe initial test for this functionality just "changes" scenes, but will soon allow the user to flip the pages of the book.
