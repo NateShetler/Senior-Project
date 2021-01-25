@@ -1,3 +1,8 @@
+Senior Honors Project (Interactive Virtual Reality Learning Experience) <br/>
+January 2021 <br/>
+By: Nathaniel Shetler <br/>
+
+---
 # Senior-Project
 
 This repository houses my senior honors project.
