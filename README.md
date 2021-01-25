@@ -12,5 +12,4 @@ hand tracking device. It is now functional on the Oculus Quest VR headset. Oculu
 ## Senior Project Folder
 The Senior Project folder houses the actual senior project (Interactive Virtual Reality Reading Experience). 
 
-To view the C# scripts written for the Unity project, navigate to: 
-* Senior-Project/Assets/Scripts
+To view the C# scripts written for the Unity project, navigate to: Senior Project/Assets/Scripts
