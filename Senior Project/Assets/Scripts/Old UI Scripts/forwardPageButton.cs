@@ -18,7 +18,6 @@ public class forwardPageButton : MonoBehaviour
     {
         // Set up the button animator
         buttonAnimator = GameObject.Find("Forward Button").GetComponent<Animator>();
-
     }
 
     // To detect the button press

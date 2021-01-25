@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿// Nathaniel Shetler
+// 25 January 2020
+// Senior Honors Project
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
