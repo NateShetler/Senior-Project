@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 
 public class pageTurner : MonoBehaviour
 {
+    // This will be used to determine which page the transport button will become visible
+    public int transportButtonVisible;
+
     // This list will be used to store the pages of the book
     public List<GameObject> pages = new List<GameObject>();
 
@@ -41,7 +44,7 @@ public class pageTurner : MonoBehaviour
         }
 
         // Set the intial value of the page number
-        setPageCounter(0);
+        SetPageCounter(0);
     }
 
     // Update is called once per frame
@@ -54,28 +57,23 @@ public class pageTurner : MonoBehaviour
 
             // If the counter is greater than the amount of pages, set it back to zero.
             // Otherwise increment the counter by 2 to "turn the page"
-            if (getPageCounter() > pages.Count)
+            if (GetPageCounter() > pages.Count)
             {
-                setPageCounter(0);
+                SetPageCounter(0);
             }
             else
             {
                 // Increment counter by 2
-                incrementPageCounter();
+                IncrementPageCounter();
             }
 
             // Make the next pages visible
             for (int i = 0; i < pages.Count; ++i)
             {
-                if (i == getPageCounter())
+                if (i == GetPageCounter() || i == (GetPageCounter() + 1))
                 {
                     // Make page visible
-                    pages[i].SetActive(true);
-                }
-                else if (i == (getPageCounter() + 1))
-                {
-                    // Make page visible
-                    pages[i].SetActive(true);
+                    pages[i].SetActive(true);     
                 }
                 else
                 {
@@ -93,26 +91,26 @@ public class pageTurner : MonoBehaviour
             // If the counter is less than or equal to 2, then make sure it doesn't go lower (to ensure that 'negative'
             // pages are not attempted to be rendered)
             // Otherwise, decrement the counter by 2 to 'turn the page'
-            if (getPageCounter() <= 2)
+            if (GetPageCounter() <= 2)
             {
-                setPageCounter(2);
+                SetPageCounter(2);
             }
             else
             {
                 // Decrement counter by 2
-                decrementPageCounter();
+                DecrementPageCounter();
 
             }
 
             // Make the next pages visible
             for (int i = 0; i < pages.Count; ++i)
             {
-                if (i == (getPageCounter() - 1))
+                if (i == (GetPageCounter() - 1))
                 {
                     // Make page visible
                     pages[i].SetActive(true);
                 }
-                else if (i == (getPageCounter() - 2))
+                else if (i == (GetPageCounter() - 2))
                 {
                     // Make page visible
                     pages[i].SetActive(true);
@@ -133,29 +131,34 @@ public class pageTurner : MonoBehaviour
 
     // Pre: N/A
     // Post: This function will increment the page counter by 2
-    public void incrementPageCounter()
+    public void IncrementPageCounter()
     {
         pageCounter += 2;
     }
 
     // Pre: N/A 
     // Post: This function will decrement the page counter by 2
-    public void decrementPageCounter()
+    public void DecrementPageCounter()
     {
         pageCounter -= 2;
     }
 
     // Pre: This function will accept an integer value
     // Post: This function will set the value of the page counter variable
-    public void setPageCounter(int newValue)
+    public void SetPageCounter(int newValue)
     {
         pageCounter = newValue;
     }
 
     // Pre: N/A
     // Post: This function will return the value of the pageCounter variable
-    public int getPageCounter()
+    public int GetPageCounter()
     {
         return pageCounter;
+    }
+
+    public int GetTransportButtonVisible()
+    {
+        return transportButtonVisible;
     }
 }
