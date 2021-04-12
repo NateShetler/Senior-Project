@@ -8,6 +8,7 @@ TagManager:
   - Push Button
   - Transport Button
   - Book
+  - Button Collider
   layers:
   - Default
   - TransparentFX
